@@ -1,28 +1,38 @@
 import React from "react";
-import { makeAutoObservable } from "mobx";
+import {makeAutoObservable} from "mobx";
 import {IPaymentMethod, IResidenceItem} from "../Components/types";
-const selectedCountryInitValue = {text:"", value:"",phone_idd:""}
-// Model the application state.
+
+const selectedCountryInitValue = {text: "", value: "", phone_idd: ""}
+
 class PaymentMethodStore {
-    countryList: IResidenceItem[] = [];
+    countryListStore: IResidenceItem[] = [];
     paymentMethods: IPaymentMethod[] = [];
     selectedCountry: IResidenceItem = selectedCountryInitValue
+    loading = false;
     constructor() {
         makeAutoObservable(this);
     }
 
-    updateCountryList() {
-    //     get the data from ws and put it to
-        this.countryList = []
+    toggleLoading = () => {
+        this.loading = !this.loading;
     }
-    getPaymentMethods(){
+    updatePaymentMethods = (pms: IPaymentMethod[]) => {
+        this.paymentMethods = pms
+    }
+    updateSelectedCountry = (residence: IResidenceItem) => {
+        this.selectedCountry = residence
+    }
+    updateCountryList = (countryList: IResidenceItem[]) => {
+        this.countryListStore = countryList
+    }
 
-    }
     resetPaymentMethods() {
         this.paymentMethods = [];
     }
-    resetSelectedCountry(){
+
+    resetSelectedCountry() {
         this.selectedCountry = selectedCountryInitValue
     }
 }
+
 export default PaymentMethodStore
