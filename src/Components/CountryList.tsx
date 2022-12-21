@@ -1,11 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { IPaymentMethod, IResidenceItem } from "./types";
+import {useStore} from "../store/helpers";
 
 type TCountryListProps = {
   websocket: React.MutableRefObject<WebSocket | undefined>;
+
 };
 
-const CountryList = ({ websocket }: TCountryListProps) => {
+const CountryList = ({ websocket,  }: TCountryListProps) => {
+  const store  = useStore();
+
+  console.log("countryList", store.selectedCountry)
   const [selected_country, setSelectedCountry] =
     useState<IResidenceItem["value"]>("");
   const [countries, setCountries] = useState<IResidenceItem[]>([]);
