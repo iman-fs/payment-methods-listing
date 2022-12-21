@@ -32,6 +32,13 @@ class PaymentMethodStore {
   resetSelectedCountry = () => {
     this.selectedCountry = selectedCountryInitValue;
   };
+
+  clear = () => {
+    this.countryListStore = [];
+    this.paymentMethods = [];
+    this.selectedCountry = selectedCountryInitValue;
+    this.loading = false;
+  };
 }
 
 export default PaymentMethodStore;
