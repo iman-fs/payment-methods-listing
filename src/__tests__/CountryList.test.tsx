@@ -47,8 +47,8 @@ describe("Payment Method", () => {
   });
 
   it("Should get residence list on first render from websocket server", async () => {
-    return act(async () => {
-      await expect(server).toReceiveMessage({ residence_list: 1 });
+    act(() => {
+      expect(server).toReceiveMessage({ residence_list: 1 });
     });
   });
 
