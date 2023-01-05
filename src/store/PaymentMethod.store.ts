@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { IPaymentMethod, IResidenceItem } from "../Components/types";
 
-const selectedCountryInitValue = { text: "", value: "", phone_idd: "" };
+export const selectedCountryInitValue = { text: "", value: "", phone_idd: "" };
 
 class PaymentMethodStore {
   countryListStore: IResidenceItem[] = [];

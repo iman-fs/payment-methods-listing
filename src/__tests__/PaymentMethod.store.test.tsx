@@ -14,7 +14,9 @@ describe("Store", () => {
     store.clear();
   });
 
-  it("Should have loading as false", () => {});
+  it("Should have loading as false", () => {
+    expect(store.loading).toBeFalsy();
+  });
 
   it("Should update country list", () => {
     store.updateCountryList(fake_residence_list.residence_list);
