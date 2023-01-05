@@ -26,14 +26,26 @@ describe("Store", () => {
     expect(store.countryListStore).toEqual(fake_residence_list.residence_list);
   });
 
-  it("Should update the selected country", () => {});
+  it("Should update the selected country", () => {
+    expect(true).toBeFalsy();
+  });
 
-  it("Should have initial select country value on resetSelectedCountry", () => {});
+  it("Should have initial select country value on resetSelectedCountry", () => {
+    expect(true).toBeFalsy();
+  });
 
-  it("Should update payment methods", () => {});
+  it("Should update payment methods", () => {
+    expect(true).toBeFalsy();
+  });
 
-  it("Should clear payment methods on resetPaymentMethods", () => {});
+  it("Should clear payment methods on resetPaymentMethods", () => {
+    expect(true).toBeFalsy();
+  });
 
-  it("Should have loading as fulsy by default", () => {});
-  it("Should have loading as truthy on toggleLoading", () => {});
+  it("Should have loading as fulsy by default", () => {
+    expect(true).toBeFalsy();
+  });
+  it("Should have loading as truthy on toggleLoading", () => {
+    expect(true).toBeFalsy();
+  });
 });
